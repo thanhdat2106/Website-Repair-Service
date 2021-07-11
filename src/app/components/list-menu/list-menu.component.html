@@ -1,0 +1,6 @@
+<div style="background-color: #ffffff;">
+<p style="font-size: 1.5em; font-weight: bold; border-bottom: brown solid 5px; ">Danh mục sửa chữa </p>
+<mat-list role="list" *ngFor="let item of List">
+    <mat-list-item role="listitem" ><a (click)="reload(item.maLoaiDV)" style="color: black; cursor: pointer; ">{{item.tenLoaiDV}}</a></mat-list-item>  
+  </mat-list>
+  </div>

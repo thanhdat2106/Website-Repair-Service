@@ -1,0 +1,74 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+        <!-- Card stats -->
+       
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid mt--7">
+    <div class="row">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header bg-transparent">
+            <h3 class="mb-0">Nhân viên</h3>
+          </div>
+          <div class="card-body">
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <!-- Create -->
+            <button type="button" class="btn "(click)="openDialog(0)">
+              <i class="ni ni-fat-add text-yellow"></i>Thêm</button>
+            <div class="mat-elevation-z8 ">
+              <table mat-table [dataSource]="dataSource" matSort class="text-center"> 
+                <ng-container  matColumnDef="tenNV">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Tên Nhân Viên </th>
+                  <td style="width: 15%;" class="text-left" width="200px" mat-cell *matCellDef="let element"> {{element.tenNV}} </td>
+                </ng-container>
+                <ng-container   matColumnDef="ngayVL">
+                    <th  mat-header-cell *matHeaderCellDef mat-sort-header> Ngày Vào Làm</th>
+                    <td style="width: 15%;" mat-cell *matCellDef="let element"> {{element.ngayVL}} </td>
+                  </ng-container>
+                <ng-container   matColumnDef="soNha">
+                    <th  mat-header-cell *matHeaderCellDef mat-sort-header> Số Nhà </th>
+                    <td style="width: 15%;" mat-cell *matCellDef="let element"> {{element.soNha}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="sdt">
+                    <th  mat-header-cell *matHeaderCellDef mat-sort-header> Số Điện Thoại </th>
+                    <td style="width: 10%;" mat-cell *matCellDef="let element"> {{element.sdt}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="email">
+                    <th  mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                    <td style="width: 15%;" mat-cell *matCellDef="let element"> {{element.email}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="luong">
+                    <th  mat-header-cell *matHeaderCellDef mat-sort-header> Lương  </th>
+                    <td style="width: 10%;" mat-cell *matCellDef="let element"> {{element.luong}} </td>
+                  </ng-container>&nbsp;
+                  <ng-container matColumnDef="gioiTinh">
+                    <th  mat-header-cell *matHeaderCellDef mat-sort-header> Giới Tính </th>
+                    <td style="width: 10%;" mat-cell *matCellDef="let element"> {{element.gioiTinh}} </td>
+                  </ng-container>&nbsp;
+                <ng-container matColumnDef="maNV">
+                  <th mat-header-cell *matHeaderCellDef>  </th>
+                  <td style="width: 10%;" mat-cell *matCellDef="let element"> 
+                      
+                            <button type="button"  class="btn "(click)="openDialog(element.maNV)"><img src="https://img.icons8.com/cotton/64/000000/edit--v2.png" width="30" height="30" /></button>
+                            <button type="button"  class="btn "(click)="deleteNhanvien(element.maNV)"><img src="https://img.icons8.com/plasticine/100/000000/delete-sign.png" width="30" height="30" /></button> 
+                  </td>
+                  
+                </ng-container>           
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+            
+              <mat-paginator  [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

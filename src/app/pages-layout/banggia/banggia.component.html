@@ -1,0 +1,5 @@
+<div><p style="font-family:'Times New Roman', Times, serif; font-weight: bold; 
+text-align: center; font-size: 25px; color: red;">BẢNG GIÁ THAM KHẢO KHI SỬA CHỮA CÁC DỊCH VỤ</p></div>
+<div class=" col-lg-8 alert alert-primary text-center " style="margin-left: auto;margin-right: auto; cursor: pointer;" role="alert"  *ngFor="let item of dichvu" routerLinkActive="active" [routerLink]="['detailbanggia/',item.maDV]">
+    {{item.tenDV}}
+  </div>

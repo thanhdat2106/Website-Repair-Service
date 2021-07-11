@@ -1,0 +1,96 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+        <!-- Card stats -->
+       
+      </div>
+    </div>
+  </div>
+<div class="container-fluid mt--7">
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header bg-transparent">
+                    <h3 class="mb-0">Tin Tức</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-lg-8">
+
+                                <div class="row">
+                                    <label class=" col-lg-3 form-control-label" for="input-tieude">Tên Tiêu Đề</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="input-tieude"
+                                            class="form-control form-control-alternative"
+                                            placeholder="VD: Bảo quản tủ lạnh" formControlName="tieuDe">
+                                            <mat-error>  
+                                                <span *ngIf="!addForm.get('tieuDe').value && addForm.get('tieuDe').touched"></span>  
+                                              </mat-error> 
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <label class=" col-lg-3 form-control-label" for="input-ngaydang">Ngày Đăng</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="input-ngaydang" readonly
+                                            class="form-control form-control-alternative" placeholder="VD: 07/11/2020"
+                                            formControlName="ngayDang">
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <label class=" col-lg-3 form-control-label" for="input-tacgia">Tên Tác Giả</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" id="input-tacgia"
+                                            class="form-control form-control-alternative"
+                                            placeholder="VD: Nguyễn Thành Đạt" formControlName="tacGia">
+                                            <mat-error>  
+                                                <span *ngIf="!addForm.get('tacGia').value && addForm.get('tacGia').touched"></span>  
+                                              </mat-error> 
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <label class=" col-lg-3 form-control-label" for="input-tacgia">Loại Dịch Vụ</label>
+                                    <div class="col-lg-8">   
+                                        <select class="form-control"  id="maLoaiDV" formControlName="maLoaiDV" name="maLoaiDV"   > 
+                                            <option hidden value="" disabled selected>Chọn 1 loại dịch vụ </option>
+                                            <option   *ngFor="let item of allloaidv" [value]=item.maLoaiDV>{{item.tenLoaiDV}}</option>
+                                        </select>
+                                        <mat-error>  
+                                            <span *ngIf="!addForm.get('maLoaiDV').value && addForm.get('maLoaiDV').touched"></span>  
+                                          </mat-error> 
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-lg-4">
+                                <img src="assets/img/post/{{this.anh}}" width="150px" height="150px">
+                                <input name="file" type="file" (change)="onFileChange($event)">
+                                <input type="hidden" name="fileHidden" formControlName="hinhAnh">
+                                <!-- <mat-error>  
+                                    <span *ngIf="!addForm.get('hinhAnh').value && addForm.get('hinhAnh').touched"></span>  
+                                  </mat-error>  -->
+                            </div>
+                        </div>
+                        <br />
+                        <div>
+                            <angular-editor formControlName="moTa" style="height: 300px;" [config]="editorConfig">
+                            </angular-editor>
+                            <mat-error>  
+                                <span *ngIf="!addForm.get('moTa').value && addForm.get('moTa').touched"></span>  
+                              </mat-error> 
+                        </div>
+                        <br />
+                        <div style="text-align: center;">
+                            <button class="btn btn-success" >Save</button> &nbsp;&nbsp;
+                            <button class="btn btn-primary" (click)="Reset()">Reset</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

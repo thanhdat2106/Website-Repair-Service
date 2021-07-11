@@ -1,0 +1,124 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+      <div class="header-body">
+        <!-- Card stats -->
+        
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid mt--7">
+    <div class="row">
+      <div class="col">
+        <div class="card shadow">
+          <div class="card-header bg-transparent">
+            <h3 class="mb-0">Hợp Đồng</h3>
+          </div>
+          <div class="card-body">
+            <mat-form-field>
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <!-- Create -->
+            <mat-accordion class="example-headers-align" multi>
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Thêm 
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    Thêm/Chỉnh sửa hợp đồng
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+            <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+              <div class="row">
+                <div class="col-lg-3">
+                  <mat-form-field>
+                    <mat-label>Mã Thợ</mat-label>
+                    <input matInput formControlName="maTho">
+                    <mat-error>  
+                      <span *ngIf="!addForm.get('maTho').value && addForm.get('maTho').touched"></span>  
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-lg-3">
+                  <mat-form-field>
+                    <mat-label>Ngày Ký Kết </mat-label>
+                    <input matInput  [matDatepicker]="picker1" formControlName="ngayKiKet">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                    <mat-error>  
+                      <span *ngIf="!addForm.get('ngayKiKet').value && addForm.get('ngayKiKet').touched"></span>  
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-lg-3">
+                  <mat-form-field>
+                    <mat-label>Ngày Bắt Đầu</mat-label>
+                    <input matInput  [matDatepicker]="picker2" formControlName="ngayBD">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                    <mat-error>  
+                      <span *ngIf="!addForm.get('ngayBD').value && addForm.get('ngayBD').touched"></span>  
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+                <div class="col-lg-3">
+                  <mat-form-field>
+                    <mat-label>Ngày Kết Thúc</mat-label>
+                      <input matInput  [matDatepicker]="picker3" formControlName="ngayKT">
+                        <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+                        <mat-datepicker #picker3></mat-datepicker>
+                    <mat-error>  
+                      <span *ngIf="!addForm.get('ngayKT').value && addForm.get('ngayKT').touched"></span>  
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button mat-raised-button color="primary" [disabled]="!addForm.valid" >Thêm</button>&nbsp;&nbsp;&nbsp;
+                <button mat-raised-button color="warn" (click)="reset()">Reset</button>
+              </form>
+              </mat-expansion-panel>
+            </mat-accordion>
+            <div class="mat-elevation-z8 ">
+              <table mat-table [dataSource]="dataSource" matSort class="text-center"> 
+                <ng-container  matColumnDef="maTho">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Mã Thợ </th>
+                  <td class="text-left" width="200px" mat-cell *matCellDef="let element"> {{element.maTho}} </td>
+                </ng-container>
+                <ng-container   matColumnDef="maNV">
+                    <th  mat-header-cell *matHeaderCellDef mat-sort-header> Mã Nhân Viên </th>
+                    <td mat-cell *matCellDef="let element"> {{element.maNV}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="ngayKiKet">
+                    <th  mat-header-cell *matHeaderCellDef mat-sort-header> Ngày Kí Kết </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ngayKiKet| date:'dd-MM-yyyy'}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="ngayBD">
+                    <th  mat-header-cell *matHeaderCellDef mat-sort-header> Ngày Bắt Đầu </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ngayBD| date:'dd-MM-yyyy'}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="ngayKT">
+                    <th  mat-header-cell *matHeaderCellDef mat-sort-header>Ngày Kết Thúc </th>
+                    <td mat-cell *matCellDef="let element"> {{element.ngayKT| date:'dd-MM-yyyy'}} </td>
+                  </ng-container>&nbsp;
+                <ng-container matColumnDef="maHopDong">
+                  <th mat-header-cell *matHeaderCellDef>  </th>
+                  <td mat-cell *matCellDef="let element"> 
+                    <button type="button"  class="btn "(click)="loadhopdongToEdit(element.maHopDong)" (click)="accordion.openAll()"><img src="https://img.icons8.com/cotton/64/000000/edit--v2.png" width="30" height="30" /></button> 
+                    <button type="button"  class="btn "(click)="deleteEmployee(element.maHopDong)"><img src="https://img.icons8.com/plasticine/100/000000/delete-sign.png" width="30" height="30" /></button> 
+                  </td>
+                  
+                </ng-container>           
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+            
+              <mat-paginator  [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

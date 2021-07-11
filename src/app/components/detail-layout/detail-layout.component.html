@@ -1,0 +1,10 @@
+<div class="text-center">
+
+    <p  *ngIf="tintuc" style=" font-size: 28px;">{{tintuc.tieuDe}}</p>
+</div>
+<div *ngIf="tintuc">
+    <i class="ni ni-time-alarm text-danger"></i> {{tintuc.ngayDang| date:'MM/dd/yyyy'}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{tintuc.tacGia}}
+</div>
+<div>
+    <span *ngIf="tintuc" [innerHTML]="tintuc.moTa"></span>
+</div>

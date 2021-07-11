@@ -1,0 +1,52 @@
+<div class="row"  style="background-color: #333333; color: white;" >
+
+    <div class="col-lg-4 text-center">
+        <p style="font-size: 1.8em;">Liên Hệ</p>
+        <p style="color: #9E9E9E;">Xin chào, chúng tôi là dịch vụ sửa chữa tại nhà</p>
+        <div class="row">
+            <div class="col-lg-6">
+                <p style="color: #9E9E9E;">PHONE NUMBER</p>
+                <p>0823742210</p>
+            </div>
+            <div class="col-lg-6">
+                <p style="color: #9E9E9E;">EMAIL ADDRESS</p>
+                <p>thanhdat2106@gmail.com</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <p style="color: #9E9E9E;">OUR LOCATION</p>
+                <p>Duong so 30, Phuong Linh Dong, Quan Thu Duc, HCM</p>
+            </div>
+            <div class="col-lg-6">
+                <p style="color: #9E9E9E;">WORKING HOURS</p>
+                <p>Mon-Sat 7:00am -7:00pm</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 text-center">
+        <p style="font-size: 1.8em;">Danh Mục</p>
+        <ul style="text-decoration: none; list-style: none;  text-align: center;" >
+            <mat-list role="list" *ngFor="let item of list">
+                <mat-list-item role="listitem" ><a  (click)="reload(item.maLoaiDV)" style="color: white; cursor: pointer; margin: auto; ">{{item.tenLoaiDV}}</a></mat-list-item>  
+              </mat-list>
+            
+        </ul>
+        
+    </div>
+    <div class="col-lg-4 text-center">
+        <p style="color: white;font-size: 1.8em">Follow Us </p>
+        <div>
+            <ul style="text-decoration: none;list-style: none; display: inline; ">
+                <li><a><img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" width="40px" height="40px"/></a></li>
+                <li><a><img  src="https://img.icons8.com/cotton/64/000000/youtube.png" width="40px" height="40px"/></a></li>
+                <li><a><img src="https://img.icons8.com/fluent/48/000000/twitter.png" width="40px" height="40px"/></a></li>
+                <li><a><img alt="svgImg" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHg9IjBweCIgeT0iMHB4Igp3aWR0aD0iNTAiIGhlaWdodD0iNTAiCnZpZXdCb3g9IjAgMCAxNzIgMTcyIgpzdHlsZT0iIGZpbGw6IzAwMDAwMDsiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1saW5lY2FwPSJidXR0IiBzdHJva2UtbGluZWpvaW49Im1pdGVyIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS1kYXNoYXJyYXk9IiIgc3Ryb2tlLWRhc2hvZmZzZXQ9IjAiIGZvbnQtZmFtaWx5PSJub25lIiBmb250LXdlaWdodD0ibm9uZSIgZm9udC1zaXplPSJub25lIiB0ZXh0LWFuY2hvcj0ibm9uZSIgc3R5bGU9Im1peC1ibGVuZC1tb2RlOiBub3JtYWwiPjxwYXRoIGQ9Ik0wLDE3MnYtMTcyaDE3MnYxNzJ6IiBmaWxsPSIjMzQ5OGRiIj48L3BhdGg+PGcgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTMwLjk2LDEzLjc2Yy05LjQ1ODM0LDAgLTE3LjIsNy43NDE2NiAtMTcuMiwxNy4ydjExMC4wOGMwLDkuNDU4MzQgNy43NDE2NiwxNy4yIDE3LjIsMTcuMmgxMTAuMDhjOS40NTgzNCwwIDE3LjIsLTcuNzQxNjYgMTcuMiwtMTcuMnYtMTEwLjA4YzAsLTkuNDU4MzQgLTcuNzQxNjYsLTE3LjIgLTE3LjIsLTE3LjJ6TTMwLjk2LDIwLjY0aDIyLjYyMjAzYy0xMS44OTU5NiwxMi4zNzc0OSAtMTkuMTgyMDMsMjguNjMzMjggLTE5LjE4MjAzLDQ2LjQ0YzAsMTguNDQzMDUgNy44MDI0MywzNS4yNTUxNyAyMC40NjUzMSw0Ny43NzcwM2MtMC40NjAzLC0wLjQzODUyIDAuMTM1NTksMC4zMjQwOCAwLjE5NDg0LDEuNjcyOTdjMC4wNjExNiwxLjM5MjQyIC0wLjE0ODUsMy4zMDU1NSAtMC43MTIxOSw1LjIwMDMxYy0xLjEyNzM2LDMuNzg5NTIgLTMuNDg1MzIsNy4yODI1NiAtNy4yNzY0LDguNTQ2MjVjLTEuNDgwNjQsMC40OTM0MyAtMi40NDM2NCwxLjkyMTcyIC0yLjM0NTg5LDMuNDc5MzRjMC4wOTc3NSwxLjU1NzYzIDEuMjMxNzUsMi44NTQzMiAyLjc2MjQ2LDMuMTU4NzhjOS40OTMzOCwxLjg5ODY4IDE2LjIwODUsLTAuOTU5NjUgMjEuMTU3MzQsLTMuMjMxNzJjNC45NDg4NSwtMi4yNzIwNiA3LjYyMjg5LC0zLjgwMTA0IDEyLjYyNDUzLC0xLjc4MDQ3YzAuMDEzNDEsMC4wMDQ1NiAwLjAyNjg1LDAuMDA5MDQgMC4wNDAzMSwwLjAxMzQ0YzkuMzY0NzcsMy42NjA1MiAxOS42NzUxNCw1LjY4NDA2IDMwLjQ4OTY5LDUuNjg0MDZjMTQuNDM4NzgsMCAyNy45NzEyMiwtMy42MDc5OCAzOS41NiwtOS44OTY3MnYxMy4zMzY3MmMwLDUuNzM5NTggLTQuNTgwNDIsMTAuMzIgLTEwLjMyLDEwLjMyaC0xMTAuMDhjLTUuNzM5NTgsMCAtMTAuMzIsLTQuNTgwNDIgLTEwLjMyLC0xMC4zMnYtMTEwLjA4YzAsLTUuNzM5NTggNC41ODA0MiwtMTAuMzIgMTAuMzIsLTEwLjMyek02My42MjY1NiwyMC42NGg3Ny40MTM0NGM1LjczOTU4LDAgMTAuMzIsNC41ODA0MiAxMC4zMiwxMC4zMnY4OC43NjgxM2MtMTEuMjU5NSw2LjkwNzYzIC0yNC44NTUyMiwxMC45OTE4NyAtMzkuNTYsMTAuOTkxODdjLTkuOTQxMDksMCAtMTkuMzg5MDYsLTEuODU5NjQgLTI3Ljk1LC01LjIwMDMxYy03LjI2ODgzLC0yLjkzNjQ3IC0xMy4xODk5MSwtMC4zMzM5NiAtMTguMDczNDQsMS45MDgxM2MtMi42NDQ4MiwxLjIxNDI2IC01LjI1NDIxLDIuMjIzNjggLTguMjAzNiwyLjc4MTU2YzEuNDU5MTYsLTIuMDgwNTMgMi43MDczLC00LjMwMjcxIDMuMzY2MSwtNi41MTcxOWMwLjc3ODM1LC0yLjYxNjM3IDEuMDk0NzksLTUuMTc4NDEgMC45OTQzNywtNy40NjQ1M2MtMC4xMDAwNywtMi4yNzgyMSAtMC4yOTkxNCwtNC4zNjQ3MSAtMi4yMjM5LC02LjI1NTE1bC0wLjAwNjcyLC0wLjAwNjcyYy0xMS40ODQ1OCwtMTEuMzU2OTYgLTE4LjQyMjgxLC0yNi4zNzgxMSAtMTguNDIyODEsLTQyLjg4NTc4YzAsLTE4LjMwOTcyIDguNTUyNDYsLTM0Ljc4NjU1IDIyLjM0NjU2LC00Ni40NHpNMTEzLjQ2NjI1LDUxLjU1Mjk3Yy0xLjg5NzIyLDAuMDI5NjYgLTMuNDEyMjMsMS41ODk3NiAtMy4zODYyNSwzLjQ4NzAzdjMwLjk2Yy0wLjAxNzU0LDEuMjQwNTkgMC42MzQyNSwyLjM5NDUyIDEuNzA1OCwzLjAxOTkzYzEuMDcxNTUsMC42MjU0MSAyLjM5Njg0LDAuNjI1NDEgMy40NjgzOSwwYzEuMDcxNTUsLTAuNjI1NDEgMS43MjMzNSwtMS43NzkzNSAxLjcwNTgsLTMuMDE5OTN2LTMwLjk2YzAuMDEyNzMsLTAuOTI5ODMgLTAuMzUxNDksLTEuODI1MjIgLTEuMDA5NjcsLTIuNDgyMTRjLTAuNjU4MTksLTAuNjU2OTIgLTEuNTU0MjcsLTEuMDE5NDIgLTIuNDg0MDgsLTEuMDA0ODl6TTYxLjkyLDU1LjA0Yy0xLjI0MDU5LC0wLjAxNzU0IC0yLjM5NDUyLDAuNjM0MjUgLTMuMDE5OTMsMS43MDU4Yy0wLjYyNTQxLDEuMDcxNTUgLTAuNjI1NDEsMi4zOTY4NCAwLDMuNDY4MzljMC42MjU0MSwxLjA3MTU1IDEuNzc5MzUsMS43MjMzNSAzLjAxOTkzLDEuNzA1OGgxMC45OTg2bC0xMy45MTQ1MywyMi4yNTkyMmMtMC42NjExMywxLjA2MDE5IC0wLjY5NTUxLDIuMzk1NDggLTAuMDg5NzksMy40ODgyOGMwLjYwNTcxLDEuMDkyOCAxLjc1NjI5LDEuNzcxMyAzLjAwNTczLDEuNzcyNWgxNy4yYzEuMjQwNTksMC4wMTc1NCAyLjM5NDUyLC0wLjYzNDI1IDMuMDE5OTMsLTEuNzA1OGMwLjYyNTQxLC0xLjA3MTU1IDAuNjI1NDEsLTIuMzk2ODQgMCwtMy40NjgzOWMtMC42MjU0MSwtMS4wNzE1NSAtMS43NzkzNSwtMS43MjMzNSAtMy4wMTk5MywtMS43MDU4aC0xMC45OTg2bDEzLjkxNDUzLC0yMi4yNTkyMmMwLjY2MTEzLC0xLjA2MDE5IDAuNjk1NTEsLTIuMzk1NDggMC4wODk3OSwtMy40ODgyOGMtMC42MDU3MSwtMS4wOTI4IC0xLjc1NjI5LC0xLjc3MTMgLTMuMDA1NzMsLTEuNzcyNXpNMTAzLjE0NjI1LDY1LjMxMjk3Yy0xLjE0NTg4LDAuMDIwMjIgLTIuMjA2NDUsMC42MDk3IC0yLjgyODYsMS41NzIxOWMtMS43MTE3LC0wLjkzOTkzIC0zLjY0MTc2LC0xLjUyNTE1IC01LjcxNzY1LC0xLjUyNTE1Yy02LjYwODc2LDAgLTEyLjA0LDUuNDMxMjQgLTEyLjA0LDEyLjA0YzAsNi42MDg3NiA1LjQzMTI0LDEyLjA0IDEyLjA0LDEyLjA0YzIuMDczOCwwIDQuMDAwNDcsLTAuNTg2OTggNS43MTA5NCwtMS41MjUxNWMwLjgzMjczLDEuMjg3ODkgMi40MTczNywxLjg2OTA2IDMuODg1MzEsMS40MjQ5M2MxLjQ2Nzk0LC0wLjQ0NDEyIDIuNDY0NjQsLTEuODA2MjcgMi40NDM3NSwtMy4zMzk3OHYtOC42di04LjZjMC4wMTI3MywtMC45Mjk4MyAtMC4zNTE0OSwtMS44MjUyMiAtMS4wMDk2NywtMi40ODIxNGMtMC42NTgxOSwtMC42NTY5MiAtMS41NTQyNywtMS4wMTk0MiAtMi40ODQwOCwtMS4wMDQ4OXpNMTMyLjQ0LDY1LjM2Yy02LjYwODc2LDAgLTEyLjA0LDUuNDMxMjQgLTEyLjA0LDEyLjA0YzAsNi42MDg3NiA1LjQzMTI0LDEyLjA0IDEyLjA0LDEyLjA0YzYuNjA4NzYsMCAxMi4wNCwtNS40MzEyNCAxMi4wNCwtMTIuMDRjMCwtNi42MDg3NiAtNS40MzEyNCwtMTIuMDQgLTEyLjA0LC0xMi4wNHpNOTQuNiw3Mi4yNGMyLjg5MDU0LDAgNS4xNiwyLjI2OTQ2IDUuMTYsNS4xNmMwLDIuODkwNTQgLTIuMjY5NDYsNS4xNiAtNS4xNiw1LjE2Yy0yLjg5MDU0LDAgLTUuMTYsLTIuMjY5NDYgLTUuMTYsLTUuMTZjMCwtMi44OTA1NCAyLjI2OTQ2LC01LjE2IDUuMTYsLTUuMTZ6TTEzMi40NCw3Mi4yNGMyLjg5MDU0LDAgNS4xNiwyLjI2OTQ2IDUuMTYsNS4xNmMwLDIuODkwNTQgLTIuMjY5NDYsNS4xNiAtNS4xNiw1LjE2Yy0yLjg5MDU0LDAgLTUuMTYsLTIuMjY5NDYgLTUuMTYsLTUuMTZjMCwtMi44OTA1NCAyLjI2OTQ2LC01LjE2IDUuMTYsLTUuMTZ6Ij48L3BhdGg+PC9nPjwvZz48L3N2Zz4=" width="40px" height="40px"/></a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row" style="background-color: #000000;  color: white;">
+    <p style="margin: auto;">DCService ứng dụng gọi thợ đáng tin cậy</p>
+</div>

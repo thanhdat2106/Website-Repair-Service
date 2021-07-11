@@ -1,0 +1,188 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+            <!-- Card stats -->
+
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt--7">
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header bg-transparent">
+                    <h3 class="mb-0">CHI TIẾT ĐƠN HÀNG</h3>
+                </div>
+                <div class="card-body">
+                    <p class="text-center" style="font-size: 25px;color: brown;">CHI TIẾT ĐƠN HÀNG</p>
+                    <form [formGroup]="FormHD">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-hd">Mã Hóa Đơn</label>
+                                    <input type="text" id="input-hd" class="form-control form-control-alternative"
+                                        formControlName="maHD">
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class="form-control-label" for="input-email">Ngày Lập</label>
+                                <div class="row">
+                                    <input style="margin-left: 5%;"
+                                        class="col-lg-9 form-control form-control-alternative" matInput
+                                        [matDatepicker]="picker1" formControlName="ngayLap">
+                                    <mat-datepicker-toggle matSuffix [for]="picker1" class="col-lg-2">
+                                    </mat-datepicker-toggle>
+                                    <mat-datepicker #picker1></mat-datepicker>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-address">Trạng Thái Hóa Đơn</label>
+                                    <input id="input-address" class="form-control form-control-alternative"
+                                        formControlName="trangThai">
+                                </div>
+                            </div>
+                        </div>
+                        <p style="font-size: 20px; font-weight: bold; color: orangered;">Phần Khách Hàng</p>
+                        <div class="row" style="border: darkred 1px solid; border-radius: 10px;">
+                            <div class="col-lg-12">
+                                <div class=" row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-sdt">Tên Khách Hàng</label>
+                                            <input type="text" id="input-sdt"
+                                                class="form-control form-control-alternative" formControlName="tenKH">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-email">Điểm Đánh giá Khách
+                                                Hàng</label>
+                                            <input type="text" id="input-postal-code"
+                                                class="form-control form-control-alternative"
+                                                formControlName="diemDGKhachHang">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-address">Nhận Xét Khách
+                                                Hàng</label>
+                                            <input id="input-address" class="form-control form-control-alternative"
+                                                formControlName="nhanXetKhachHang">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <label class="form-control-label" for="input-address">Tên Dịch Vụ</label>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label class="form-control-label" for="input-country">Hạn Bảo Hành</label>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label class="form-control-label" for="input-country">Chi Phí Sửa Chữa</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div *ngFor="let item of listcthd" class="col-lg-12">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <input id="input-address" disabled=true
+                                                class="form-control form-control-alternative" value="{{item.tenDV}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <input type="text" id="input-postal-code" disabled=true
+                                                class="form-control form-control-alternative"
+                                                value="{{item.hanBaoHanh| date:'dd-MM-yyyy'}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <input type="text" id="input-country" disabled=true
+                                                class="form-control form-control-alternative"
+                                                value="{{item.thanhTien}} VNĐ">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         
+                                <div class="col-lg-12">
+                                    <div class="row">
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="input-country">Phí Di
+                                                    Chuyển</label>
+                                                <input type="text" id="input-postal-code"
+                                                    class="form-control form-control-alternative"
+                                                    formControlName="phiDiChuyen">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="input-country">Chiết Khấu</label>
+                                                <input type="text" id="input-postal-code"
+                                                    class="form-control form-control-alternative"
+                                                    formControlName="chietKhau">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="input-address">Thuế VAT</label>
+                                                <input id="input-address" class="form-control form-control-alternative"
+                                                    formControlName="thueVAT">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="input-address">Tổng Tiền</label>
+                                                <input id="input-address" class="form-control form-control-alternative"
+                                                    formControlName="tongTien">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="font-size: 20px; font-weight: bold; color: orangered;">Phần thợ</p>
+                            <div class="row" style="border: brown 1px solid; border-radius: 10px;">
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-sdt">Tên Thợ</label>
+                                        <input type="text" id="input-sdt" class="form-control form-control-alternative"
+                                            formControlName="tenTho">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-country">Phí Dịch Vụ</label>
+                                        <input type="text" id="input-country"
+                                            class="form-control form-control-alternative" formControlName="phiDichVu">
+                                    </div>
+                                </div>
+                                <div class="col-lg-3">
+                                    <label class="form-control-label" for="input-email">Điểm Đánh giá Thợ</label>
+                                    <input type="text" id="input-postal-code"
+                                        class="form-control form-control-alternative" formControlName="diemDGKhachHang">
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="input-address">Nhận Xét Thợ</label>
+                                        <input id="input-address" class="form-control form-control-alternative"
+                                            formControlName="nhanXetTho">
+                                    </div>
+                                </div>
+                            </div>
+                            <br/>
+                            <div class="col-12 text-right">
+                                <button class="btn btn-primary float-right" mat-button (click)="onBack()">Back</button>
+                            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

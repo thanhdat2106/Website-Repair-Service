@@ -1,0 +1,111 @@
+<form [formGroup]="FormTS">
+  <div class="row">
+    <p class="col-lg-3 form-control-label" style="font-size: 20px; ">Thông tin thợ</p>
+    <div class="col-lg-4"></div>
+    <button style="height: 35px;" class=" col-lg-1 btn btn-primary float-right" mat-button (click)="Edit()">Edit</button>
+  </div>
+ 
+<div class="row">
+    <div class="col-lg-8">
+        <div class="row">
+            <div class="col-lg-4">  
+                <div class="form-group">
+                    <label class="form-control-label" for="input-email">Tên Thợ </label>
+                    <input type="text" id="input-email"  class="form-control form-control-alternative" placeholder="Tên thợ"  formControlName="tenTho">
+                  </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label class="form-control-label" for="input-email">Số Điện Thoại</label>
+                    <input type="text" id="input-email"  class="form-control form-control-alternative" placeholder="Số điện thoại"  formControlName="sdt">
+                  </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+                  <label class="form-control-label" for="input-email">Số Tài Khoản</label>
+                  <input type="text" id="input-email"  class="form-control form-control-alternative" placeholder="Số tài khoản"  formControlName="soTaiKhoan">
+                </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">  
+                <div class="form-group">
+                    <label class="form-control-label" for="input-email">Email</label>
+                    <input type="email" id="input-email"  class="form-control form-control-alternative" placeholder="Email"  formControlName="email">
+                  </div>
+            </div> 
+            <div class="col-lg-4">
+                <div class="form-group">
+                    <label class="form-control-label" for="input-ddg">Điểm Đánh giá</label>
+                    <input type="text" id="input-ddg"  class="form-control form-control-alternative" placeholder="Điểm đánh giá"  formControlName="diemDanhGia">
+                  </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="form-group">
+                  <label class="form-control-label" for="input-email">Số Dư</label>
+                  <input type="text" id="input-email"  class="form-control form-control-alternative" placeholder="Số dư"  formControlName="soDu">
+                </div>
+          </div>
+         </div>
+         <!-- <section class="example-section">
+         <mat-slide-toggle class="example-margin" [checked]="active">Active</mat-slide-toggle>
+        </section> -->
+    </div>
+    <div class="col-lg-4">
+        <!-- <div class="card-profile-image">          
+              <img style="padding-top: 50px;"  src="assets/img/theme/team-4-800x800.jpg">
+          </div> -->
+          <img src="assets/img/thosua/{{this.anh}}"  width="150px" height="150px">
+          <input name="file" type="file" (change)="onFileChange($event)">
+          <input type="hidden" name="fileHidden" formControlName="anh">
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3">  
+        <div class="form-group">
+            <label class="form-control-label" for="input-address">Số Nhà</label>
+            <input id="input-address" class="form-control form-control-alternative" placeholder="Home Address" formControlName="soNha" type="text">
+          </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="form-group">
+        <label class="form-control-label" for="tenTinh">Tỉnh/Thành</label>
+        <select class="form-control"id="tenTinh"  formControlName="maTinh" (change)="onClickTinh()"  name="tenTinh"> 
+          <option  *ngFor="let item of tinhthanh"  [value]=item.maTinh>{{item.tenTinh}}</option>
+      </select>
+    </div>
+    </div>
+    <div class="col-lg-3">  
+      <div class="form-group">
+        <label class="form-control-label" for="input-country">Quận/Huyện</label>
+        <select class="form-control"id="input-home"  formControlName="maQH" (change)="onClickQuan()" name="tenQH"   > 
+          <option  *ngFor="let item of quanhuyen" [value]=item.maQH>{{item.tenQH}}</option>
+      </select>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <div class="form-group" >
+        <label class="form-control-label" for="input-home">Phường/Xã</label>
+        <select class="form-control"   id="input-home" formControlName="maPX" name="tenPX"   > 
+          <option     *ngFor="let item of phuongxa" [value]=item.maPX>{{item.tenPX}}</option>
+      </select>
+    </div>
+</div>
+<div>
+  <mat-checkbox class="example-margin" formControlName="active" (click)="updatetho()" [checked]="active" >Active</mat-checkbox>
+  <mat-checkbox class="example-margin" formControlName="loaiTho" (click)="updateloaiTho()" [checked]="loaiTho" >Vip</mat-checkbox>
+</div>
+</div>
+<div>
+  <p class="form-control-label" style="font-size: 20px; ">Danh các dịch vụ</p>
+  <div class="row">
+    <p class="col-lg-3" *ngFor="let item of thodv">{{item.tenDV}}</p>
+  </div>
+  
+</div>
+  <div>
+    <button style="margin-left: 10px;" class=" row btn btn-primary float-right" mat-button (click)="onNoClick()">Close</button>
+    <button style="margin-left: 15px;" class=" row btn btn-primary float-right" mat-button (click)="Save()">Save</button>
+    <button class=" row btn btn-primary float-right" mat-button (click)="Print()">Print</button>
+  </div>
+</form>

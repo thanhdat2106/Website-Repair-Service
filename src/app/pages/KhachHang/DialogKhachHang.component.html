@@ -1,0 +1,69 @@
+<form [formGroup]="FormNV">
+<div class="row">
+    <div class="col-lg-8">
+        <div class="row">
+            <div class="col-lg-6">  
+                <div class="form-group">
+                    <label class="form-control-label" for="input-kh">Tên Khách Hàng</label>
+                    <input type="text"  id="input-kh" class="form-control form-control-alternative"  formControlName="tenKH">
+                  </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="form-control-label" for="input-sdt">Số Điện Thoại</label>
+                    <input type="text" id="input-sdt" class="form-control form-control-alternative"  formControlName="sdt">
+                  </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">  
+                <div class="form-group">
+                    <label class="form-control-label" for="input-email">Email</label>
+                    <input type="email" id="input-email" class="form-control form-control-alternative"  formControlName="email">
+                  </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label class="form-control-label" for="input-dtl">Điểm Tích Lũy</label>
+                    <input type="text" id="input-dtl" class="form-control form-control-alternative"  formControlName="diemTichLuy">
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card-profile-image">          
+            <img src="assets/img/nhanvien/{{this.anh}}"  width="150px" height="150px">
+          </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3">  
+        <div class="form-group">
+            <label class="form-control-label" for="input-address">Số Nhà</label>
+            <input id="input-address"  class="form-control form-control-alternative" placeholder="Home Address" formControlName="soNha" type="text">
+          </div>
+        </div>
+    <div class="col-lg-3">
+        <div class="form-group">
+            <label class="form-control-label" for="input-country">Phường/Xã</label>
+            <input type="text" id="input-postal-code" class="form-control form-control-alternative" placeholder="Postal code" formControlName="tenPX">
+          </div>
+    </div>
+    <div class="col-lg-3">  
+        <div class="form-group">
+            <label class="form-control-label" for="input-country">Quận/Huyện</label>
+            <input type="text" id="input-country" class="form-control form-control-alternative" placeholder="Country" formControlName="tenQH">
+          </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="form-group">
+            <label class="form-control-label" for="input-city">Tỉnh/Thành</label>
+            <input type="text" id="input-city" class="form-control form-control-alternative" placeholder="City" formControlName="tenTinh">
+          </div>
+    </div>
+    
+</div>
+</form>
+<div  >
+    <button class=" row btn btn-primary float-right" mat-button (click)="onNoClick()">Close</button>
+  </div>

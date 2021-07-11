@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "repairservices-5632f": {
+      "hosting": {
+        "argon-dashboard-angular": [
+          "repairservices-5632f"
+        ]
+      }
+    }
+  }
+}

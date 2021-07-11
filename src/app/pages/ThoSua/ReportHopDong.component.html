@@ -1,0 +1,93 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header bg-transparent">
+          <h3 class="mb-0">Report Hợp Đồng</h3>
+        </div> 
+       <div class="card-body">
+          <div id="content" #content >
+            <h2 style="font-weight: bold;">CÔNG TY TNHH DCServices</h2>
+            <h4 style="font-size: 20px;">19 đường số 30, phường Linh Đông, Quận Thủ Đức, Thành phố Hồ Chí Minh</h4>
+            <h4>Hotline: 0823742210 – Zalo: 039 312 1200 - Website: DCServices.com – Email: DCServices@gmail.com</h4>
+            <hr/>
+            <h4><i>-	Căn cứ Bộ Luật Dân sự ngày 14/06/2005 của Quốc hội nước CHXHCN Việt Nam</i></h4>
+            <h4><i>-	Căn cứ Luật Doanh nghiệp số 60/2005/QH11 ngày 29/11/2005 của Quốc hội</i></h4>
+            <h4><i>-	Căn cứ Nghị định số 102/2010/NĐ-CP ngày 01/10/2010 của Chính phủ hướng dẫn chi tiết thi hành một số điều Luật Doanh Nghiệp</i></h4>
+            <h4><i>-	Căn cứ Điều lệ tổ chức và hoạt động của Công ty TNHH DCServices</i></h4>
+            <h4>Hôm nay, ngày {{this.date| date:'dd'}} tháng {{this.date| date:'MM'}} năm {{this.date| date:'yyyy'}}, tại Công ty TNHH DCServices, 19 đường số 30, Quận Thủ Đức, TP. Hồ Chí Minh. Chúng tôi gồm:</h4>
+            <h3 style="font-weight: bold;">BÊN A: CÔNG TY TNHH DCServices (Rada)</h3>
+            <h4>Địa chỉ: số 19 đường số 30, Quận Thủ Đức, TP. Hồ Chí Minh</h4>
+            <h4>Đại diện: Ông Nguyễn Thành Đạt</h4>
+            <h4>T.Khoản: Số: 0451000355268 - Ngân hàng TMCP Ngoại thương VN – CN. Thành Công</h4>
+            <h3 style="font-weight: bold;">BÊN B: {{this.thosua.tenTho}}</h3>
+            <h4>Địa chỉ: {{this.thosua.soNha}}, {{this.diachi[0].tenPX}}, {{this.diachi[0].tenQH}}, {{this.diachi[0].tenTinh}}</h4>
+            <h4>Đại diện: Ông/bà {{this.thosua.tenTho}}</h4>
+            <h4>Điện thoại: {{this.thosua.sdt}}</h4>
+            <h4>Email: {{this.thosua.email}}</h4>
+            <h4>Hai bên cùng thống nhất ký kết “Thỏa thuận cung cấp dịch vụ trên ứng dụng Rada những điều khoản như sau:</h4>
+            <h4 style="font-weight: bold;">Điều 1. Nội dung chính của thỏa thuận</h4>
+            <h4>Bên B tham gia cung cấp dịch vụ tận nơi cho khách hàng trên ứng dụng di động Rada thuộc một (hoặc một số) lĩnh vực dưới đây:</h4>
+            <h4>Bên A cung cấp ứng dụng giúp cho khách hàng có thể gửi yêu cầu dịch vụ đến với Bên B khi hai bên cách nhau trong một khoảng cách nhất định để hai bên có thể liên lạc, thỏa thuận và thực hiện giao dịch cung cấp dịch vụ của bên B cho khách hàng.</h4>
+            <h4 style="font-weight: bold;">Điều 2. Cơ chế & phương thức hợp tác</h4>
+            <h4>Đối với mỗi yêu cầu của khách hàng thuộc lĩnh vực dịch vụ bên B cung cấp, Bên A đảm bảo phát yêu cầu (một cách công bằng) tới ứng dụng RadaPartner cài đặt trên điện thoại của bên B cũng như các đối tác khác cung cấp dịch vụ cùng lĩnh vực trong một phạm vi xác định (còn gọi là bán kính phục vụ ngành dịch vụ).
+              Theo đó, Bên B sẽ chủ động tiếp nhận yêu cầu thông qua ứng dụng RadaPartner để cung cấp dịch vụ căn cứ trên khả năng và sự sẵn sàng của bên B tại thời điểm tiếp nhận.
+              </h4>
+            <h4 style="font-weight: bold;">Điều 3. Các khoản phí, đặt cọc để mở tài khoản trên Rada</h4>
+            <h4>Bên B thanh toán cho Bên A chi phí kết nối, giới thiệu khách hàng là 10% - 15% giá trị đơn hàng được giới thiệu/giao dịch thành công ghi nhận trên hệ thống (Chi tiết bảng mức phí trong phụ lục số 2).</h4>
+            <h4> - Tiền ký quỹ (đảm bảo trách nhiệm): 2.000.000 đ (Hai triệu đồng chẵn ./.)</h4>
+              <h4> - Tiền nạp trước vào tài khoản nhận khách: 1.000.000đ (Một triệu đồng).</h4>
+                <h4>  *** Lưu ý: số dư tối thiểu trong tài khoản (để nhận khách): 200.000 đ (Hai trăm nghìn đồng)
+              </h4>
+              <h4 style="font-weight: bold;">Điều 4. Trách nhiệm và cam kết</h4>
+              <h4>Bên B chịu trách nhiệm toàn bộ chất lượng, tính minh bạch, giá cả, chứng từ của dịch vụ do mình cung cấp đến khách hàng (bao gồm cả tính pháp lý) khi triển khai, chi tiết tại Phụ lục 2.</h4>
+              <h4> Bên B thanh toán đầy đủ giá trị giới thiệu được ghi nhận trên hệ thống cho Bên A trên tài khoản ứng dụng hoặc tài khoản Ngân hàng do Bên A thông báo.</h4>
+              <h4>  Bên A xuất bảng kê đối soát, hóa đơn, chứng từ cho Bên B tại thời điểm phát sinh thanh toán giữa hai bên.
+              </h4>
+              <h4 style="font-weight: bold;">Điều 5. Thời hạn của thỏa thuận</h4>
+              <h4>
+                Thỏa thuận này có thời hạn là 12 (mười hai) tháng kể từ ngày ký trong điều kiện bình thường hoặc có thể chấm dứt nếu:</h4>
+                <h4>◦	Hai bên đồng ý chấm dứt thỏa thuận</h4>
+                <h4> ◦	Bên B vi phạm cam kết chất lượng hoặc pháp lý liên quan đến dịch vụ hoặc các triển khai do mình cung cấp đến khách hàng
+                </h4>
+                <h4 style="font-weight: bold;">Điều 6. Bảo mật thông tin</h4>
+                <h4>Mỗi Bên tham gia Thỏa thuận này có nghĩa vụ giữ bí mật mọi chi tiết về Thỏa thuận này các hồ sơ, tài liệu, thông tin được Bên kia cung cấp, ngoại trừ trong các trường hợp sau:</h4>
+                  <h4>◦	Việc tiết lộ các chi tiết về Thỏa thuận và/hoặc cung cấp các hồ sơ, tài liệu, thông tin đó là theo yêu cầu của các cơ quan nhà nước có thẩm quyền theo quy định của pháp luật;</h4>
+                  <h4>◦	Việc tiết lộ các chi tiết Thỏa thuận và/hoặc cung cấp các hồ sơ, tài liệu, thông tin đó là cho bên tư vấn hợp pháp của Bên đó hoặc cho nhân viên có liên quan, với điều kiện việc tiết lộ này được thực hiện thông qua việc ký kết một thoả thuận bảo mật, theo đó những người được tiết lộ cam kết sẽ tuân theo các quy định về bảo mật như được quy định tại Thỏa thuận này</h4>
+                  <h4>◦	Việc tiết lộ các chi tiết về Thỏa thuận và/hoặc cung cấp các hồ sơ, tài liệu, thông tin đó đã được Bên kia chấp thuận bằng văn bản.</h4>
+                  <h4> Nghĩa vụ này phải được Các Bên thực hiện trong suốt quá trình thực hiện Thỏa thuận này và sau 03 (ba) tháng kể từ ngày Thỏa thuận này hết thời hạn, bị chấm dứt hoặc hủy bỏ.
+                  </h4>
+                  <h4 style="font-weight: bold;">Điều 7. Giải quyết tranh chấp</h4>
+                  <h4>Trong quá trình thực hiện Thỏa thuận này, nếu phát sinh tranh chấp, 
+                    hai bên cùng nhau thương lượng giải quyết trên nguyên tắc tôn trọng quyền lợi của nhau,
+                     mỗi bên phải thông báo bằng văn bản nêu rõ bản chất tranh chấp và gửi cho bên kia biết để cùng thương lượng giải quyết. Trường hợp việc thương lượng không đạt được kết quả thì trong thời hạn 30 (ba mươi) ngày kể từ ngày gửi thông báo nêu trên, một trong hai bên có quyền khởi kiện để yêu cầu Tòa án nhân dân có thẩm quyền tại Việt Nam xét xử theo quy định của pháp luật Việt Nam.</h4>
+                  <h4 style="font-weight: bold;">Điều 8. Điều khoản chung</h4>
+                  <h4>Thỏa thuận này có hiệu lực kể từ ngày ký và được lập thành 03 (ba) 
+                    bản có giá trị như nhau, mỗi Bên A giữ 02 (hai) bản, Bên B giữa 01 (một) 
+                    bản để thực hiện.</h4>
+                  <div class="row">
+                    <h3 class="col-lg-3">BÊN B</h3>
+                    <div class="col-lg-6"></div>
+                    <h3 class="col-lg-3">BÊN A</h3>
+                  </div>
+                  <div class="row">
+                    <h4 class="col-lg-3">Người ký:</h4>
+                    <div class="col-lg-6"></div>
+                    <h4 class="col-lg-3">Nguyễn Thành Đạt</h4>
+                  </div>
+                 
+          </div>
+          
+          <button class=" row btn btn-primary float-right" mat-button (click)="generatePdf()">Export PDF</button>
+        </div>
+     </div>
+    </div>
+  </div>
+</div> 

@@ -1,0 +1,161 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+          
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt--7">
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header bg-transparent">
+                    <h3 class="mb-0">Thêm/Chỉnh Sửa Nhân Viên</h3>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="FormNV" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-kh">Tên Nhân Viên</label>
+                                            <input type="text" id="input-kh"
+                                                class="form-control form-control-alternative" formControlName="tenNV" placeholder="vd: Nguyễn Văn A" onkeypress="return event.charCode < 48 || event.charCode > 57">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-sdt">Số Điện Thoại</label>
+                                            <input type="text" id="input-sdt"
+                                                class="form-control form-control-alternative" formControlName="sdt"  maxlength="11" placeholder="vd:0820937582" onkeypress="return event.charCode >= 48 && event.charCode < 57">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-sdt">Ngày Sinh</label>
+                                            <div class="row">
+                                                <input style="margin-left: 5%;" placeholder="vd: 21/06/1999"
+                                                    class="col-lg-8 form-control form-control-alternative" matInput
+                                                    [matDatepicker]="picker1" formControlName="ngaySinh">
+                                                <mat-datepicker-toggle matSuffix [for]="picker1" class="col-lg-2">
+                                                </mat-datepicker-toggle>
+                                                <mat-datepicker #picker1></mat-datepicker>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-email">Email</label>
+                                            <input type="email" id="input-email" placeholder="vd: dat@gmail.com"
+                                                class="form-control form-control-alternative" formControlName="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-dtl">Chứng Minh Nhân
+                                                Dân</label>
+                                            <input type="text" id="input-dtl" placeholder="vd: 237121332"
+                                                class="form-control form-control-alternative" formControlName="cmnd"  maxlength="9" onkeypress="return event.charCode >= 48 && event.charCode < 57">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-sdt">Giới Tính</label>
+
+                                            <select class="form-control" id="gioiTinh" formControlName="gioiTinh"
+                                                name="gioiTinh">
+                                                <option value="Nữ">Nữ</option>
+                                                <option value="Nam">Nam</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-email">Lương</label>
+                                            <input type="email" id="input-email" placeholder="vd: 10000000"
+                                                class="form-control form-control-alternative" formControlName="luong" onkeypress="return event.charCode >= 48 && event.charCode < 57">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-dtl">Ngày Vào Làm</label>
+                                            <div class="row">
+                                                <input style="margin-left: 5%;" placeholder="vd: 15/11/2020"
+                                                    class="col-lg-8 form-control form-control-alternative" matInput
+                                                    [matDatepicker]="picker" formControlName="ngayVL">
+                                                <mat-datepicker-toggle matSuffix [for]="picker" class="col-lg-2">
+                                                </mat-datepicker-toggle>
+                                                <mat-datepicker #picker></mat-datepicker>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label class="  form-control-label" for="input-tacgia">Chức Vụ </label>
+                                        <select class="form-control" id="maCV" formControlName="maCV" name="maCV">
+                                            <option *ngFor="let item of chucvu" [value]=item.maCV>{{item.tenCV}}
+                                            </option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                           
+                            <div class="col-lg-4">
+                                <img src="assets/img/nhanvien/{{this.anh}}"  width="150px" height="150px">
+                                <input name="file" type="file" (change)="onFileChange($event)">
+                                <input type="hidden" name="fileHidden" formControlName="anh">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-address">Số Nhà</label>
+                                    <input id="input-address" class="form-control form-control-alternative" 
+                                        placeholder="Home Address" formControlName="soNha" type="text">
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="tenTinh">Tỉnh/Thành</label>
+                                    <select class="form-control" id="tenTinh" formControlName="maTinh"
+                                        (change)="onClickTinh()" name="tenTinh">
+                                        <option *ngFor="let item of tinhthanh" [value]=item.maTinh>{{item.tenTinh}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-country">Quận/Huyện</label>
+                                    <select class="form-control" id="input-home" formControlName="maQH"
+                                        (change)="onClickQuan()" name="tenQH">
+                                        <option *ngFor="let item of quanhuyen" [value]=item.maQH>{{item.tenQH}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-home">Phường/Xã</label>
+                                    <select class="form-control" id="input-home" formControlName="maPX" name="tenPX">
+                                        <option *ngFor="let item of phuongxa" [value]=item.maPX>{{item.tenPX}}</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 text-right">
+                            <button type="submit" mat-button class="btn  btn-primary">Save</button>
+                            <button class="btn btn-primary float-right" mat-button (click)="onBack()">Back</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

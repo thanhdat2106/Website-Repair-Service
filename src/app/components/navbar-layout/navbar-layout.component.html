@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, inital-scale=1" >
+    </head>
+    <body>
+            <div class="row">
+                <div class="col-lg-4 header-left">
+                </div>        
+                <div class="col-lg-4 text-center">
+                    <p style="font-size: 15px; text-align: center; padding-top:5px;">CUNG CẤP DỊCH VỤ SỬA CHỮA NHANH CHÓNG, UY TÍN, TIẾT KIỆM</p>
+                </div> 
+                <div class="col-lg-4 header-right">
+                </div> 
+            </div>
+            <div class="logo text-center">
+                <img src="assets/img/logo/logo.png" width="80%" style="margin: auto;">
+            </div>
+           
+                
+                    <mat-toolbar style="background-color: white;" >
+                        <mat-toolbar-row>
+                          <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-lg>
+                            <mat-icon>menu</mat-icon>
+                          </button>
+                          <span class="menu-spacer"></span>
+                          <div fxShow="true" fxHide.lt-md>
+                            <!-- The following menu items will be hidden on both SM and XS screen sizes -->
+                            <div class="row">
+                                <div class="col-lg-4">
+                            <button mat-button [matMenuTriggerFor]="animals">Danh mục</button>
+                            <mat-menu #animals="matMenu">
+                                <button *ngFor="let item of List" mat-menu-item (click)="reload(item.maLoaiDV)" >{{item.tenLoaiDV}}</button>
+                            </mat-menu>
+                            
+                            <button mat-button routerLinkActive="active" [routerLink]="['banggia/']" > Bảng giá tham khảo</button>            
+                                </div>
+                                <div class="col-lg-4 text-center">
+                                    <img src="assets/img/logo/logo.png" width="80%">
+                                </div>
+                                <div class="col-lg-4">
+                                    <a style="color: black;" mat-button routerLinkActive="active" [routerLink]="['gioithieu/']">Giới Thiệu</a>
+                                    <a style="color: black;" mat-button routerLinkActive="active" [routerLink]="['tuyendung/']">Tuyển Đối Tác</a>
+                                </div>
+                            </div>
+                            
+                           
+                            
+                            
+                          </div>
+                        </mat-toolbar-row>
+                      </mat-toolbar>
+                    
+                      <mat-sidenav-container fxFlexFill>
+                        <mat-sidenav #sidenav>
+                          <mat-nav-list>
+                            <a (click)="sidenav.toggle()" href="http://localhost:4200/#/web" mat-list-item>Trang chủ</a>
+                            <a mat-list-item>
+                                <button mat-button [matMenuTriggerFor]="animals">Danh mục</button>
+                                <mat-menu #animals="matMenu">
+                                    <button *ngFor="let item of List" mat-menu-item (click)="reload(item.maLoaiDV)" >{{item.tenLoaiDV}}</button>
+                                </mat-menu>
+                            </a>
+                                <!-- Menu 2 -->
+                                <a mat-list-item>
+                                    <button mat-button routerLinkActive="active" [routerLink]="['banggia/']" > Bảng Giá Tham Khảo</button>
+                                </a>
+                                <a mat-list-item >
+                                    <button mat-button routerLinkActive="active" [routerLink]="['gioithieu/']" > Giới Thiệu</button>
+                                </a>
+                                <a mat-list-item ><button mat-button routerLinkActive="active" [routerLink]="['tuyendung/']" >Tuyển Đối Tác</button></a>
+                          </mat-nav-list>
+                        </mat-sidenav>
+                        <mat-sidenav-content fxFlexFill>
+                           <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-lg-3 header-bottom-left"></div>       
+                                <div class="col-lg-1" style="background-color: white;"></div> 
+                                <div class="col-lg-4" style="background-color: white;">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                        <input type="text" class="form-control search" placeholder="Search" >
+                                        </div> 
+                                        <div class="col-lg-2 ">
+                                            <img src="https://img.icons8.com/cotton/64/000000/search-pain.png" width="40px" height="40px"/>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="col-lg-1" style="background-color: white;"></div> 
+                                <div class="col-lg-3 header-bottom-right ">
+                                </div> 
+                            </div>
+                        
+                        <div class="row"  style="background-image: url(assets/img/logo/hinh4.png ) ;height: 400px;   filter:brightness(50%);">
+                            
+                        </div>  
+                        </div>
+                        </mat-sidenav-content>
+                    
+                      </mat-sidenav-container>
+                
+              
+            
+            
+        
+                   
+    </body>
+</html>

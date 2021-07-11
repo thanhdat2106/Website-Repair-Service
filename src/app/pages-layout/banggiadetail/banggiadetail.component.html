@@ -1,0 +1,23 @@
+<p *ngIf="dv" style="font-family: 'Times New Roman', Times, serif;
+font-size: 25px; font-weight: bold; text-align: center;">Giá thành tham khảo dịch vụ {{dv.tenDV}}</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Tên dịch vụ</th>
+        <th scope="col">Đơn vị</th>
+        <th scope="col">Giá thấp nhất</th>
+        <th scope="col">Giá cao nhất</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of listbanggia;let i = index">
+        <th scope="row">{{i}}</th>
+        <td>{{item.moTa}}</td>
+        <td>{{item.donVi}}</td>
+        <td>{{item.giaThapNhat}}</td>
+        <td>{{item.giaCaoNhat}}</td>
+      </tr>
+      
+    </tbody>
+  </table>

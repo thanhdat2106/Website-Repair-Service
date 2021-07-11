@@ -1,0 +1,18 @@
+<div class="container-fluid ">
+    <div class="row" >
+    <div class="col-lg-4" *ngFor="let item of tt" style="margin-top: 5%;" >
+        <mat-card class="example-card">
+            <img mat-card-image src="assets/img/post/{{item.hinhAnh}}" height="200px"  >
+            <mat-card-content style="height: 50px;">
+              <a routerLinkActive="active" [routerLink]="['/web/detail/',item.maTT]" >
+                {{item.tieuDe}}
+              </a>
+            </mat-card-content>
+            <mat-card-actions>
+              <i class="ni ni-time-alarm text-danger"></i> {{item.ngayDang| date:'MM/dd/yyyy'}}&nbsp;
+            </mat-card-actions>
+          </mat-card>
+    </div>
+</div>
+<br/>
+</div>

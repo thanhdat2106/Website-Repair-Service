@@ -1,0 +1,125 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+            <!-- Card stats -->
+
+        </div>
+    </div>
+</div>
+<div class="container-fluid mt--7">
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header bg-transparent">
+                    <h3 class="mb-0">CHI TIẾT ĐƠN GỌI THỢ</h3>
+                </div>
+                <div class="card-body">
+                    <p class="text-center" style="font-size: 25px;color: brown;">CHI TIẾT ĐƠN GỌI THỢ</p>
+                    <form [formGroup]="FormGT">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-hd">Mã Gọi Thợ</label>
+                                    <input type="text" id="input-hd" class="form-control form-control-alternative"
+                                        formControlName="maGT">
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <label class="form-control-label" for="input-email">Ngày Gọi</label>
+                                <div class="row">
+                                    <input style="margin-left: 5%;"
+                                        class="col-lg-9 form-control form-control-alternative" matInput
+                                        [matDatepicker]="picker1" formControlName="ngayGoi">
+                                    <mat-datepicker-toggle matSuffix [for]="picker1" class="col-lg-2">
+                                    </mat-datepicker-toggle>
+                                    <mat-datepicker #picker1></mat-datepicker>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-address">Trạng Thái Đơn Gọi</label>
+                                    <input id="input-address" class="form-control form-control-alternative"
+                                        formControlName="trangThai">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class=" row">
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-sdt">Tên Khách Hàng</label>
+                                            <input type="text" id="input-sdt"
+                                                class="form-control form-control-alternative" formControlName="tenKH">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-email">Số Điện Thoại
+                                                Hàng</label>
+                                            <input type="text" id="input-postal-code"
+                                                class="form-control form-control-alternative" formControlName="sdt">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <div class="form-group">
+                                            <label class="form-control-label" for="input-address">Địa Chỉ
+                                                Hàng</label>
+                                            <input id="input-address" class="form-control form-control-alternative"
+                                                formControlName="diaChi">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="form-control-label" style="font-size: 15px; ">Danh các dịch vụ</p>
+                            <div class="row">
+                                <p class="col-lg-3" *ngFor="let item of dichvu">{{item}}</p>
+                            </div>
+                            <p class="form-control-label" style="font-size: 15px">Ghi Chú</p>
+                            <div class="row">
+                                <input id="input-address" class="form-control form-control-alternative"
+                                    formControlName="ghiChu">
+                            </div>
+                        </div>
+                    </form>
+                    <p class="form-control-label" style="font-size: 15px; ">Phần thợ</p>
+                    <table mat-table [dataSource]="dataSource" matSort>
+                        <ng-container matColumnDef="maTho">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Mã Thợ </th>
+                            <td class="text-left" width="50px" mat-cell *matCellDef="let element">
+                                {{element.maTho}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="tenTho">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Tên Thợ Sửa </th>
+                            <td class="text-left" width="200px" mat-cell *matCellDef="let element">
+                                {{element.tenTho}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="sdt">
+                            <th style="text-align: center;" mat-header-cell *matHeaderCellDef mat-sort-header>
+                                Số Điện Thoại </th>
+                            <td style="width: 200px;" mat-cell *matCellDef="let element"> {{element.sdt}}
+                            </td>
+                        </ng-container>
+                        <ng-container matColumnDef="soNha">
+                            <th mat-header-cell *matHeaderCellDef mat-sort-header> Địa Chỉ</th>
+                            <td style="width: 300px;" mat-cell *matCellDef="let element"> {{element.soNha}}
+                            </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+                    <div class="col-12 text-right">
+                        <button class="btn btn-primary float-right" mat-button (click)="onBack()">Back</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
